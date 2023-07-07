@@ -11,12 +11,12 @@ This is a React application that fetches and displays a list of Star Wars charac
 
 ## Technologies Used
 
-React
-Swiper library (SwiperJS)
-The Star Wars API (SWAPI)
-HTML/CSS
+- React
+- Swiper library (SwiperJS)
+- The Star Wars API (SWAPI)
+- HTML/CSS
 
 ## Credits
 
-The Star Wars API (SWAPI): https://swapi.dev/
-SwiperJS : https://swiperjs.com/
+- The Star Wars API (SWAPI): https://swapi.dev/
+- SwiperJS : https://swiperjs.com/
