@@ -18,6 +18,8 @@ body {
   padding: 0;
 }
 
+/* SWIPER STYLES */
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -32,8 +34,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  height: 100%;
 }
 
 .swiper-slide img {
@@ -63,80 +63,6 @@ body {
   font-size: 16px;
 }
 
-.fullscreen-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url('/public/img/background.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.title {
-  margin-top: 25px;
-  color: #ffe81f;
-  font-size: 48px;
-  font-family: 'Poller One', cursive;
-}
-
-.loading {
-  font-size: 48px;
-  margin-bottom: 16px;
-  color: #ffe81f;
-  font-family: 'Poller One', cursive;
-}
-
-.loading-dots {
-  display: inline-block;
-  font-size: 48px;
-}
-
-.dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 4px;
-  border-radius: 50%;
-  background-color: #ffe81f;
-  font-family: 'Poller One', cursive;
-  opacity: 0;
-  animation: pulse 1.6s infinite;
-}
-
-.dot:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.dot:nth-child(2) {
-  animation-delay: 0.6s;
-}
-
-.dot:nth-child(3) {
-  animation-delay: 1.2s;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  40% {
-    opacity: 0.8;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-}
-
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -152,6 +78,36 @@ body {
   margin: 0 auto;
   border: 10px groove goldenrod;
   padding: 30px;
+  text-align: center;
+}
+
+/* TEXT AND BACKGROUND */
+
+.fullscreen-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image {
+  background-image: url('/public/img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.title {
+  text-align: center;
+  margin-top: 25px;
+  color: #ffe81f;
+  font-size: 48px;
+  font-family: 'Poller One', cursive;
+  position: relative;
+  z-index: 1;
 }
 
 .highlight-container,
@@ -200,4 +156,134 @@ body {
 
 .p {
   margin-top: 40px;
+}
+
+/* LOADING */
+
+.loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/public/img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  font-size: 24px;
+  color: #ffe81f;
+  text-align: center;
+  font-family: 'Poller One', cursive;
+}
+
+.loading-text {
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  margin-top: 28px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ffe81f;
+  font-family: 'Poller One', cursive;
+  opacity: 0;
+  animation: pulse 1.6s infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+/* RESPONSIVE */
+
+/* Desktop and Tablets */
+@media screen and (min-device-width: 768px) and (max-device-width: 1600px) {
+  .title {
+    font-size: 32px;
+    margin-top: 10px;
+  }
+
+  .loading-dots {
+    flex-direction: row;
+  }
+
+  .dot {
+    margin: 0 6px;
+  }
+
+  .loading-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .loading-dots {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
+/* Phones */
+@media only screen and (max-device-width: 767px) {
+  .title {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .swiper-slide {
+    margin-top: 20px;
+  }
+
+  .loading-dots {
+    flex-direction: row;
+  }
+
+  .dot {
+    margin: 0 6px;
+  }
+
+  .loading-text {
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .loading-dots {
+    margin-left: 0;
+    margin-top: 5px;
+  }
 }
